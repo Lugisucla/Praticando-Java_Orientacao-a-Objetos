@@ -1,4 +1,6 @@
 
+import Classes.Produto;
+
 import java.util.Scanner;
 
 public class Main {
@@ -29,7 +31,18 @@ public class Main {
 
             switch (escolha) {
                 case 1:
-                    System.out.println("Essa funcionalidade não existe no momento");
+                    Produto produto1 = new Produto();
+                    System.out.println("Digite o nome do produto: ");
+                    scanner.nextLine();
+                    produto1.setNome(scanner.nextLine());
+
+                    System.out.println("Digite o valor do produto: ");
+                    produto1.setPreco(scanner.nextDouble());
+
+                    System.out.println("Digite a quantidade do produto: ");
+                    produto1.setQuantidade(scanner.nextInt());
+
+                    produto1.exibirInfoProduto();
                     break;
                 case 2:
                     System.out.println("Essa funcionalidade não existe no momento");
