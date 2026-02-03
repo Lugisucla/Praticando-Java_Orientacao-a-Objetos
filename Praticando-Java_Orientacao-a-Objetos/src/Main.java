@@ -1,8 +1,5 @@
 
-import Classes.Conta;
-import Classes.Livro;
-import Classes.Produto;
-import Classes.Temperatura;
+import Classes.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -103,7 +100,26 @@ public class Main {
                     }
                     break;
                 case 5:
-                    System.out.println("Essa funcionalidade não existe no momento");
+                    String situacao;
+                    Media media = new Media();
+                    scanner.nextLine();
+
+                    System.out.println("Digite o nome do aluno: ");
+                    media.setNome(scanner.nextLine());
+                    System.out.println("Digite a primeira nota do aluno: ");
+                    media.setNota1(scanner.nextDouble());
+                    System.out.println("Digite a segunda nota do aluno: ");
+                    media.setNota2(scanner.nextDouble());
+
+                    media.calculaMedia(media.getNota1(), media.getNota2());
+
+                    if (media.getMediaNotas() >= 7) {
+                        situacao = "Aprovado";
+                    } else {
+                        situacao = "Reprovado";
+                    }
+
+                    System.out.printf("Aluno: %s \nNota 1: %.1f \nNota 2: %.1f \nMédia: %.1f \nSituação: %s\n", media.getNome(), media.getNota1(), media.getNota2(), media.getMediaNotas(), situacao);
                     break;
                 case 6:
                     System.out.println("Essa funcionalidade não existe no momento");
