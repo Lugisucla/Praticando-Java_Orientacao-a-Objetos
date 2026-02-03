@@ -1,6 +1,9 @@
 
+import Classes.Livro;
 import Classes.Produto;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -45,7 +48,32 @@ public class Main {
                     produto1.exibirInfoProduto();
                     break;
                 case 2:
-                    System.out.println("Essa funcionalidade não existe no momento");
+                    List<Livro> biblioteca = new ArrayList<>();
+                    String confirma;
+                    scanner.nextLine();
+
+                    do {
+                        System.out.println("Digite o nome do livro a ser adicionado: ");
+                        String titulo = scanner.nextLine();
+
+                        System.out.println("Digite o autor do livro: ");
+                        String autor = scanner.nextLine();
+
+                        System.out.println("Digite a quantidade de páginas do livro: ");
+                        int quantidade = Integer.parseInt(scanner.nextLine());
+
+                        Livro livro = new Livro(titulo, autor, quantidade);
+                        biblioteca.add(livro);
+
+                        for (Livro l : biblioteca) {
+                            System.out.printf("%s de %s com %d páginas.%n", l.getTitulo(), l.getAutor(), l.getQuantidade());
+                        }
+
+                        System.out.println("Deseja adicionar um novo livro? (Sim/Não)");
+                        confirma = scanner.nextLine();
+
+                    } while (confirma.equalsIgnoreCase("Sim"));
+                    System.out.println("Biblioteca fechada.");
                     break;
                 case 3:
                     System.out.println("Essa funcionalidade não existe no momento");
