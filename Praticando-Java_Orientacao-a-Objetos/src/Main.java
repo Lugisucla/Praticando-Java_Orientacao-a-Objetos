@@ -130,7 +130,7 @@ public class Main {
 
                     System.out.println("Digite o cargo atual do funcionário: ");
                     cadastro.setCargoAtual(scanner.nextLine());
-                    
+
                     System.out.println("Digite o nível de acesso atual do funcionário: ");
                     cadastro.setNivelAcessoAtual(scanner.nextInt());
 
@@ -143,7 +143,36 @@ public class Main {
                     cadastro.exibirAtualizacao();
                     break;
                 case 7:
-                    System.out.println("Essa funcionalidade não existe no momento");
+                    List<Tarefa> listaTarefa = new ArrayList<>();
+                    scanner.nextLine();
+
+                    do {
+                        Tarefa tarefa = new Tarefa();
+                        System.out.println("Digite a descrição da tarefa: ");
+                        tarefa.setDescricao(scanner.nextLine());
+
+                        System.out.println("A tarefa foi concluída? (true/false)");
+                        tarefa.setConcluido(scanner.nextBoolean());
+
+                        listaTarefa.add(tarefa);
+                        scanner.nextLine();
+
+                        System.out.println("Deseja adicionar uma nova tarefa? (Sim/Não)");
+                        confirma =  scanner.nextLine();
+
+                    }  while (confirma.equalsIgnoreCase("Sim"));
+
+
+                    for (Tarefa l : listaTarefa) {
+                        String status;
+                        if (l.isConcluido()) {
+                            status = "Concluída";
+                        } else {
+                            status = "Pendente";
+                        }
+
+                        System.out.printf("Tarefa: %s - Status: %s \n", l.getDescricao(), status);
+                    }
                     break;
                 case 8:
                     System.out.println("Essa funcionalidade não existe no momento");
