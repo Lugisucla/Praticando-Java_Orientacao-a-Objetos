@@ -1,4 +1,5 @@
 
+import Classes.Conta;
 import Classes.Livro;
 import Classes.Produto;
 
@@ -76,7 +77,13 @@ public class Main {
                     System.out.println("Biblioteca fechada.");
                     break;
                 case 3:
-                    System.out.println("Essa funcionalidade não existe no momento");
+                    Conta conta = new Conta();
+
+                    System.out.println("Digite o saldo atual: ");
+                    conta.setSaldo(scanner.nextDouble());
+                    conta.exibirSaldo();
+                    conta.zerarSaldo();
+                    conta.exibirSaldo();
                     break;
                 case 4:
                     System.out.println("Essa funcionalidade não existe no momento");
