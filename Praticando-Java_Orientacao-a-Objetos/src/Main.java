@@ -122,7 +122,25 @@ public class Main {
                     System.out.printf("Aluno: %s \nNota 1: %.1f \nNota 2: %.1f \nMédia: %.1f \nSituação: %s\n", media.getNome(), media.getNota1(), media.getNota2(), media.getMediaNotas(), situacao);
                     break;
                 case 6:
-                    System.out.println("Essa funcionalidade não existe no momento");
+                    Cadastro cadastro = new Cadastro();
+                    scanner.nextLine();
+
+                    System.out.println("Digite o nome do funcionário: ");
+                    cadastro.setNome(scanner.nextLine());
+
+                    System.out.println("Digite o cargo atual do funcionário: ");
+                    cadastro.setCargoAtual(scanner.nextLine());
+                    
+                    System.out.println("Digite o nível de acesso atual do funcionário: ");
+                    cadastro.setNivelAcessoAtual(scanner.nextInt());
+
+                    System.out.printf("Digite o novo cargo do funcionário: ");
+                    cadastro.setCargoNovo(scanner.nextLine());
+
+                    System.out.println("Digite o novo nivel de acesso do funcionário: ");
+                    cadastro.setNivelAcessoNovo(scanner.nextInt());
+
+                    cadastro.exibirAtualizacao();
                     break;
                 case 7:
                     System.out.println("Essa funcionalidade não existe no momento");
