@@ -2,6 +2,7 @@
 import Classes.Conta;
 import Classes.Livro;
 import Classes.Produto;
+import Classes.Temperatura;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,7 +87,20 @@ public class Main {
                     conta.exibirSaldo();
                     break;
                 case 4:
-                    System.out.println("Essa funcionalidade não existe no momento");
+                    Temperatura temperatura = new Temperatura();
+                    scanner.nextLine();
+
+                    System.out.println("Digite o local do sensor: ");
+                    temperatura.setLocal(scanner.nextLine());
+
+                    System.out.println("Digite o temperatura atual: ");
+                    double temperaturaAtual = scanner.nextDouble();
+
+                    if (temperaturaAtual > 37.5) {
+                        System.out.printf("Sensor do local: %s \nTemperatura: %.1f ºC \nAlerta: Temperatura acima do limite\n", temperatura.getLocal(), temperaturaAtual);
+                    } else {
+                        System.out.printf("Sensor do local: %s \nTemperatura: %.1f ºC \nAlerta: Temperatura abaixo do limite\n", temperatura.getLocal(), temperaturaAtual);
+                    }
                     break;
                 case 5:
                     System.out.println("Essa funcionalidade não existe no momento");
