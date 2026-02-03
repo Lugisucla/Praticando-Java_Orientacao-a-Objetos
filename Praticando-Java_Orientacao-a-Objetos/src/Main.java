@@ -175,7 +175,24 @@ public class Main {
                     }
                     break;
                 case 8:
-                    System.out.println("Essa funcionalidade não existe no momento");
+                    Estoque estoque = new Estoque();
+                    scanner.nextLine();
+                    System.out.println("Digite o nome do item: ");
+                    estoque.setNome(scanner.nextLine());
+
+                    System.out.println("Digite a quantidade desse item no estoque: ");
+                    estoque.setQuantidade(scanner.nextInt());
+
+                    scanner.nextLine();
+                    System.out.println("Gostaria de comprar algum item?");
+                    confirma =  scanner.nextLine();
+                    while (confirma.equalsIgnoreCase("Sim")) {
+                        System.out.println("Quantos itens gostaria de comprar?");
+                        estoque.vender(scanner.nextInt());
+                        scanner.nextLine();
+                        System.out.println("Gostaria de comprar mais algum item?");
+                        confirma =  scanner.nextLine();
+                    }
                     break;
                 case 9:
                     System.out.println("Essa funcionalidade não existe no momento");
