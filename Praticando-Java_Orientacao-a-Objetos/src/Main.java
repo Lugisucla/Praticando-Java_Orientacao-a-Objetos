@@ -195,7 +195,16 @@ public class Main {
                     }
                     break;
                 case 9:
-                    System.out.println("Essa funcionalidade não existe no momento");
+                    Pedido pedido = new Pedido();
+                    scanner.nextLine();
+
+                    System.out.println("Digite o título do livro: ");
+                    pedido.setTitulo(scanner.nextLine());
+
+                    System.out.println("Quantos dias de atraso para a devolução do livro?");
+                    pedido.setDiasAtraso(scanner.nextInt());
+
+                    pedido.exibirDetalhes();
                     break;
                 case 10:
                     System.out.println("Essa funcionalidade não existe no momento");
