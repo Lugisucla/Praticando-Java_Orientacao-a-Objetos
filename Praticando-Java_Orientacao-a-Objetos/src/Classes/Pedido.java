@@ -13,10 +13,6 @@ public class Pedido {
         this.diasAtraso = diasAtraso;
     }
 
-    public void setValorMulta(double valorMulta) {
-        this.valorMulta = valorMulta;
-    }
-
     public void exibirDetalhes(){
         valorMulta = diasAtraso * 2.50;
 
