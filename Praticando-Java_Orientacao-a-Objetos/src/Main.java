@@ -207,7 +207,33 @@ public class Main {
                     pedido.exibirDetalhes();
                     break;
                 case 10:
-                    System.out.println("Essa funcionalidade não existe no momento");
+                    List<Carrinho> listaCarrinho = new ArrayList<>();
+                    double totalPreco = 0.0;
+                    scanner.nextLine();
+
+                    System.out.println("Deseja adicionar algum item ao carrinho? (Sim/Não)");
+                    confirma =  scanner.nextLine();
+                    while (confirma.equalsIgnoreCase("Sim")) {
+                        Carrinho carrinho = new Carrinho();
+                        System.out.println("Digite o nome do item a ser adicionado no carrinho: ");
+                        carrinho.setNome(scanner.nextLine());
+
+                        System.out.println("Digite o preço do item: ");
+                        carrinho.setPreco(scanner.nextDouble());
+
+                        System.out.println("Digite a quantidade do item: ");
+                        carrinho.setQuantidade(scanner.nextInt());
+
+                        listaCarrinho.add(carrinho);
+
+                        totalPreco += carrinho.getPreco() * carrinho.getQuantidade();
+
+                        scanner.nextLine();
+                        System.out.println("Deseja adicionar mais algum item ao carrinho? (Sim/Não)");
+                        confirma =  scanner.nextLine();
+                    }
+
+                    System.out.printf("Total da compra: R$ %.2f\n", totalPreco);
                     break;
                 case 0:
                     System.out.println("Saindo do programa...");
